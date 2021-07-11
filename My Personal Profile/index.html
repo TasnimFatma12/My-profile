@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">  
+	
+</head>
+<body>
+
+	<div class="bg">
+		
+			
+		<nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Tasnim Fatma</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="work.html">Portfolio</a></li> 
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    
+	
+
+              <div class="name">
+                <h1>TASNIM<br id="br"> FATMA</h1>
+                <p>I'm a Web Developer</p>
+                <button onclick="window.location.href='about.html';">About</button>
+	          </div>
+
+
+ 
+
+<div class="icons">
+	<i class="fa fa-github" onclick="window.open('https://github.com/TasnimFatma12')"></i>
+	<i class="fa fa-youtube" onclick="window.open('https://www.youtube.com/')"></i>
+</div>
+
+</div>
+
+
+   <div class="black">
+   	<section class="project-work">
+    <div class="container headings text-center">
+      <p class="text-center font-weight-bold">MORE THAN 100 WEBSITES CREATED</p>  
+    </div>
+      
+     <div class="container d-flex justify-content-around align-item-center text-center">
+        <div>
+          <h1 class="count"> 40</h1>
+          <p>HTML</p>
+      </div>
+
+      <div>
+          <h1 class="count"> 40</h1>
+          <p>CSS</p>
+      </div>
+
+      <div>
+          <h1 class="count"> 10</h1>
+          <p>BOOTSTRAP</p>
+      </div>
+
+      <div>
+          <h1 class="count"> 10</h1>
+          <p>JAVA SCRIPT</p>
+      </div>
+  </div>
+   </section>
+   </div>
+
+
+   <div class="footer">
+   	<p>&copy; Copyright All rights reserved, Made with love <i class="fa fa-heart-o"></i> by Tasnim Fatma</p>
+   </div>
+
+
+
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha256-JtQPj/3xub8oapVMaIijPNoM0DHoAtgh/gwFYuN5rik=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  <script>
+  	
+  	$('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+
+});
+
+
+  		$('.count').counterUp({
+  		delay:10,
+      time:1000
+
+  	})
+
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>About</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">  
+
+     <style>
+         
+         @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Bungee+Shade&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bg{
+    background: #000;
+    height: auto;
+    padding-bottom: 80px;
+    width: 100%;
+}
+
+::selection {
+        color: #000;
+        background: #fff;
+}
+
+
+.nav{
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    line-height: 65px;
+    z-index: 10;
+}
+
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    /*padding-left: 3rem;*/
+}
+
+.nav div.logo a {
+    text-decoration: none;
+    color: #4B8269;
+    font-size: 30px;
+    opacity: 0.5;
+}
+.nav div.main_list {
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #4B8269;
+    line-height: 65px;
+    opacity: 0.5;
+    font-size: 30px;
+}
+
+
+/* Home section */
+
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .navTrigger {
+        display: block;
+    }
+    .nav div.logo {
+        margin-left: 15px;
+    }
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #4B8269;
+        background-position: center top;
+    }
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: right;
+    }
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 100%;
+        font-size: 30px;
+        padding-top: 40px;
+        color: #000;
+        opacity: 1;
+    }
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+
+/* Animation */
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #4B8269;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+.affix {
+    padding: 0;
+    background-color: #111;
+}
+
+
+
+
+
+
+.myH2 {
+    text-align:center;
+    font-size: 4rem;
+}
+.myP {
+    text-align: justify;
+    padding-left:15%;
+    padding-right:15%;
+    font-size: 20px;
+}
+@media all and (max-width:700px){
+    .myP {
+        padding:2%;
+    }
+}
+
+
+
+
+.icons{
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    position: fixed;
+}
+.icons i{
+    color: #4B8269;
+    font-size: 23px;
+    padding: 16px;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid #4B8269;
+    background-color: #000;
+}
+.icons i:hover{
+    background-color: #4B8269;
+    color: #000;
+}
+
+
+
+.black{
+    background: #000;
+    height: auto;
+    width: 100%;
+}
+ .project-work{
+    margin: 0 100px 0px 100px; 
+  }
+
+  .project-work h1{
+    font-size: 2rem;
+    text-align: center;
+    color: #4B8269;
+    margin-bottom: 20px;
+  }
+
+  .project-work p{
+    font-size: 24px;
+    text-align: center;
+    word-spacing: 8px;
+    color: #4B8269;
+    margin-bottom: 50px;
+  }
+  .footer{
+    background: #000;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding: 30px 0 130px 0;
+  }
+  .footer p{
+    color: #4B8269;
+    font-size: 15px;
+  }
+
+
+.bio{
+    padding-top: 150px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    height: auto;
+}
+
+.bio h1{
+    color: #4B8269;
+    font-size: 50px;
+}
+.img{
+    width: 72%;
+    margin: auto;
+    height: auto;
+    text-align: center;
+}
+.para img{
+    width: 100%;
+    height: 100%;
+}
+
+.image{
+    padding-top: 80px;
+    width: 72%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    
+} 
+.para{
+    width: 45%;
+    height: auto;
+    background-color: #4B8269;
+    display: block;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.para p{
+    font-size: 18px;
+    line-height: 28px;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 20px;
+    color: #000;
+}
+.para blockquote{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 20px;
+    color: #000;
+}
+
+
+.para h2{
+    font-family: 'Roboto', sans-serif;
+    padding-left: 20px;
+    color: #000;
+}
+.cv{
+    text-align: right;
+    width: 85.5%;
+    margin-top: 60px;
+}
+.cv button{
+    padding: 15px 50px;
+    background-color: #000;
+    border-radius: 8px;
+    border: 2px solid #4B8269;
+    color: #4B8269;
+    font-size: 14px;
+    outline: none !important;
+}
+.cv button:hover{
+    transition: 0.6s;
+    box-shadow: 0 0 10px #4B8269, 0 0 40px #4B8269, 0 0 80px #4B8269;
+}
+
+.skill{
+    margin-top: 50px;
+}
+
+#bars {
+    margin: auto;
+    width: 70%;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+#bars h1{
+    color: #fff;
+    padding-top: 60px;
+    font-size: 50px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.bar {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.bar h3 {
+    font-size: 1.4em;
+    font-weight: normal;
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.bar-circle {
+    display: block;
+    margin: 0.7em auto;
+}
+
+
+
+
+/*-------------------responsive-----------------*/
+
+
+@media (max-width: 1150px){
+    .image{
+        display: block;
+        width: 90%;
+        text-align: center;
+    }
+    .para{
+        width: 80%;
+        margin: auto;
+        margin-bottom: 60px;
+    }
+}
+
+
+@media (max-width: 800px){
+    .project-work{
+    margin: 0; 
+  }
+  .project-work p{
+    word-spacing: 0px;
+    font-size: 18px;
+  }
+  .project-work h1{
+    font-size: 22px;
+  }
+  .footer p{
+    font-size: 13px;
+  }
+  .icons i{
+    font-size: 23px;
+    padding: 11px;
+    margin: 6px;
+}
+.cv{
+    width: 100%;
+    text-align: center;
+}
+.icons i:hover{
+    padding: 11px;
+}
+.para p{
+    padding-left: 0px;
+}
+.para blockquote{
+    padding-left: 0px;
+}
+
+
+.para h2{
+    padding-left: 0px;
+}
+}
+
+
+
+
+
+
+
+
+
+     </style>
+	
+</head>
+<body>
+
+	<div class="bg">
+		
+			
+		<nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Tasnim Fatma</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="work.html">Portfolio</a></li> 
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    
+    
+    <div class="bio">
+         <h1>About me</h1>
+     </div>
+
+     <div class="img">
+         
+     </div>
+
+
+
+    <div class="image">
+     <div class="para">
+    <img src="sonam.jpg">
+     </div>
+
+     <div class="para">
+        <h2>My Information</h2>
+         <p>My name is Tasnim Fatma, I am a Web Developer and I like to design. I have started my coding in 2019 and wanted to make it my profession. I love coding and started my journey to become a successful coder. Its going to complete 2 years of my coding Journey. I hae made many webpages as well as many websites. This is my personal portfolio.</p>
+         <h2>My courses</h2>
+         <blockquote>I have learnt coding from many online courses and from my best teacher's.</blockquote>
+         <h2>My Education</h2>
+         <blockquote>I am Graduated <i class="fa fa-graduation-cap"></i></blockquote>
+         <blockquote>Address: I'm from Odisha <i class="fa fa-home"></i>, India</blockquote>
+
+
+     </div>
+ </div>
+
+ <div class="cv">
+     <button onclick="window.open('c.pdf')">Download CV</button>
+ </div>
+
+
+
+
+
+<div class="icons">
+	<i class="fa fa-github" onclick="window.open('https://www.instagram.com/')"></i>
+	<i class="fa fa-youtube" onclick="window.open('https://www.instagram.com/')"></i>
+</div>
+
+</div>
+
+
+   <div class="black">
+   	<section class="project-work">
+    <div class="container headings text-center">
+      <p class="text-center font-weight-bold">MORE THAN 100 WEBSITES CREATED</p>  
+    </div>
+      
+     <div class="container d-flex justify-content-around align-item-center text-center">
+        <div>
+          <h1 class="count"> 40</h1>
+          <p>HTML</p>
+      </div>
+
+      <div>
+          <h1 class="count"> 40</h1>
+          <p>CSS</p>
+      </div>
+
+      <div>
+          <h1 class="count"> 10</h1>
+          <p>BOOTSTRAP</p>
+      </div>
+
+      <div>
+          <h1 class="count"> 10</h1>
+          <p>JAVA SCRIPT</p>
+      </div>
+  </div>
+   </section>
+   </div>
+
+
+   <div class="footer">
+   	<p>&copy; Copyright All rights reserved, Made with love <i class="fa fa-heart-o"></i> by Tasnim Fatma</p>
+   </div>
+
+
+
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha256-JtQPj/3xub8oapVMaIijPNoM0DHoAtgh/gwFYuN5rik=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  <script>
+  	
+  	$('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+
+});
+
+
+  		$('.count').counterUp({
+  		delay:10,
+      time:1000
+
+  	})
+
+  </script>
+
+<!-- ------------------script for bar-------------------->
+  <script>
+      
+
+      /* Credits: 
+ * https://www.developphp.com/video/JavaScript/Circular-Progress-Loader-Canvas-JavaScript-Programming-Tutorial
+ */
+
+(function() {
+    
+    var Progress = function( element ) {
+        
+        this.context = element.getContext( "2d" );
+        this.refElement = element.parentNode;
+        this.loaded = 0;
+        this.start = 4.72;
+        this.width = this.context.canvas.width;
+        this.height = this.context.canvas.height;
+        this.total = parseInt( this.refElement.dataset.percent, 10 );
+        this.timer = null;
+        
+        this.diff = 0;
+        
+        this.init();    
+    };
+    
+    Progress.prototype = {
+        init: function() {
+            var self = this;
+            self.timer = setInterval(function() {
+                self.run(); 
+            }, 25);
+        },
+        run: function() {
+            var self = this;
+            
+            self.diff = ( ( self.loaded / 100 ) * Math.PI * 2 * 10 ).toFixed( 2 );  
+            self.context.clearRect( 0, 0, self.width, self.height );
+            self.context.lineWidth = 5;
+            self.context.fillStyle = "#fff";
+            self.context.strokeStyle = "#fff";
+            self.context.textAlign = "center";
+            
+            self.context.fillText( self.loaded + "%", self.width * .5, self.height * .5 + 2, self.width );
+            self.context.beginPath();
+            self.context.arc( 35, 35, 30, self.start, self.diff / 10 + self.start, false );
+            self.context.stroke();
+            
+            if( self.loaded >= self.total ) {
+                clearInterval( self.timer );
+            }
+            
+            self.loaded++;
+        }
+    };
+    
+    var CircularSkillBar = function( elements ) {
+        this.bars = document.querySelectorAll( elements );
+        if( this.bars.length > 0 ) {
+            this.init();
+        }   
+    };
+    
+    CircularSkillBar.prototype = {
+        init: function() {
+            this.tick = 25;
+            this.progress();
+            
+        },
+        progress: function() {
+            var self = this;
+            var index = 0;
+            var firstCanvas = self.bars[0].querySelector( "canvas" );
+            var firstProg = new Progress( firstCanvas );
+            
+            
+            
+            var timer = setInterval(function() {
+                index++;
+                    
+                var canvas = self.bars[index].querySelector( "canvas" );
+                var prog = new Progress( canvas );
+                
+                if( index == self.bars.length ) {
+                        clearInterval( timer );
+                } 
+                
+            }, self.tick * 100);
+                
+        }
+    };
+    
+    document.addEventListener( "DOMContentLoaded", function() {
+        var circularBars = new CircularSkillBar( "#bars .bar" );
+    });
+    
+})();
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Contact</title>
+	<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">  
+
+     <style>
+         
+         @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Bungee+Shade&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bg{
+    background: #000;
+    height: auto;
+    padding-bottom: 80px;
+    width: 100%;
+}
+
+::selection {
+        color: #000;
+        background:  #4B8269;
+}
+
+
+.nav{
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    line-height: 65px;
+    z-index: 10;
+}
+
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    /*padding-left: 3rem;*/
+}
+
+.nav div.logo a {
+    text-decoration: none;
+    color:  #4B8269;
+    font-size: 30px;
+    opacity: 0.5;
+}
+
+.nav div.main_list {
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color:  #4B8269;
+    line-height: 65px;
+    opacity: 0.5;
+    font-size: 30px;
+}
+
+
+/* Home section */
+
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .navTrigger {
+        display: block;
+    }
+    .nav div.logo {
+        margin-left: 15px;
+    }
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color:  #4B8269;
+        background-position: center top;
+    }
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: right;
+    }
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 100%;
+        font-size: 30px;
+        padding-top: 40px;
+        opacity: 1;
+        color: #000;
+    }
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+
+/* Animation */
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #4B8269;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+.affix {
+    padding: 0;
+    background-color: #111;
+}
+
+
+
+
+
+
+.myH2 {
+    text-align:center;
+    font-size: 4rem;
+}
+.myP {
+    text-align: justify;
+    padding-left:15%;
+    padding-right:15%;
+    font-size: 20px;
+}
+@media all and (max-width:700px){
+    .myP {
+        padding:2%;
+    }
+}
+
+
+
+
+.icons{
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    position: fixed;
+}
+.icons i{
+    color:  #4B8269;
+    font-size: 23px;
+    padding: 16px;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid  #4B8269;
+    background-color: #000;
+}
+.icons i:hover{
+    background-color:  #4B8269;
+    color: #000;
+}
+
+
+
+
+
+
+  /*----------------------------first----------------*/
+.user{
+    padding-top: 120px;
+    width: 72%;
+    margin: auto;
+    height: auto;
+}
+ 
+.para{
+    background-color:  #4B8269;
+    width: 56%;
+    margin: auto;
+    height: auto;
+    padding: 40px 30px 120px 46px;
+}
+.first{
+    display: flex;
+    justify-content: space-between;
+}
+.name{
+    width: 50%;
+}
+.name p{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+}
+.name input{
+    border-top: none;
+    border-right: none;
+    outline: none !important;
+    border-left: none;
+    background-color: transparent;
+    border-bottom: 2px solid #000;
+    padding: 0 15px 0 5px;
+    width: 90%;
+}
+.last{
+    width: 50%;
+}
+
+.last p{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+}
+.last input{
+    border-top: none;
+    border-right: none;
+    outline: none !important;
+    border-left: none;
+    background-color: transparent;
+    width: 90%;
+    border-bottom: 2px solid #000;
+    padding: 0 15px 0 5px;
+}
+
+.inp{
+    margin-top: 50px;
+}
+
+.inp p{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+}
+.inp input{
+    border-top: none;
+    border-right: none;
+    outline: none !important;
+    border-left: none;
+    width: 94.6%;
+    background-color: transparent;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #000;
+    padding: 0 15px 0 5px;
+}
+
+
+.inp button{
+    border: 1px solid  #4B8269;
+    background-color: #000;
+    color:  #4B8269;
+    padding: 5px 38px 8px 38px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none !important;
+}
+.inp button:hover{
+    background-color:  #4B8269;
+    color: #000;
+}
+
+
+#msg{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #000;
+    width: 95%;
+    background-color: transparent;
+    margin-top: 15px;
+    height: 13vh;
+    background-color: transparent;
+    margin-bottom: 25px;
+    resize: none;
+    outline: none !important;
+}
+
+.hire{
+    width: 40%;
+    height: auto;
+    margin: auto;
+    margin-top: 80px;
+}
+.hire p{
+    color: #4B8269;
+    font-size: 25px;
+}
+.hire i{
+    margin-right: 20px;
+}
+.hire a button{
+    border: 2px solid #4B8269;
+    font-size: 18px;
+    padding: 8px 30px;
+    background-color: #000;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 20px;
+    outline: none !Important;
+    color: #4B8269;
+    transition: 0.6s;
+}
+.hire button:hover{
+    box-shadow: 0 0 10px #4B8269, 0 0 40px #4B8269, 0 0 80px #4B8269;
+}
+
+
+@media (max-width: 1200px){
+    .user{
+        width: 80%;
+    }
+    .para{
+        width: 66%;
+    }
+    .hire{
+        width: 52%;
+    }
+}
+
+
+
+@media (max-width: 930px){
+    .user{
+        width: 90%;
+    }
+    .para{
+        width: 68%;
+    }
+    .hire{
+        width: 60%;
+    }
+}
+
+@media (max-width: 650px){
+    .user{
+        width: 90%;
+    }
+    .para{
+        width: 80%;
+    }
+    .hire{
+        width: 75%;
+    }
+}
+
+
+
+
+
+
+
+/*-------------------------footer-------------------  */
+  .footer{
+    background: #000;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding: 30px 0 130px 0;
+  }
+  .footer p{
+    color: #4B8269;
+    font-size: 15px;
+  }
+
+
+.bio{
+    padding-top: 150px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    height: auto;
+}
+
+.bio h1{
+    color: #4B8269;
+    font-size: 50px;
+}
+
+.skill{
+    margin-top: 50px;
+}
+
+#bars {
+    margin: auto;
+    width: 70%;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+#bars h1{
+    color: #4B8269;
+    padding-top: 60px;
+    font-size: 50px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.bar {
+    float: left;
+   /* align-items: center;
+    justify-content: space-around;*/
+    width: 25%;
+    /*display: flex;*/
+    text-align: center;
+}
+
+.bar h3 {
+    font-size: 1.4em;
+    font-weight: normal;
+    margin: 0;
+    color: #4B8269;
+    text-transform: uppercase;
+}
+
+.bar-circle {
+    display: block;
+    margin: 0.7em auto;
+}
+
+
+@media (max-width: 800px){
+  .footer p{
+    font-size: 13px;
+  }
+  .icons i{
+    font-size: 23px;
+    padding: 11px;
+    margin: 6px;
+}
+.icons i:hover{
+    padding: 11px;
+}
+.hire p{
+    font-size: 18px;
+}
+}
+
+
+
+
+
+
+
+     </style>
+	
+</head>
+<body>
+
+	<div class="bg">
+		
+			
+		<nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Tasnim Fatma</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="work.html">Portfolio</a></li> 
+                    <li><a href="contact.html">Contact</a></li>>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    
+    
+    <div class="bio">
+         <h1>Contact Me</h1>
+     </div>
+
+     
+    <div class="user"> 
+
+    <div class="para">
+        
+        <div class="first">
+            <div class="name">
+            <p>First Name<sup>*</sup></p>
+            <input type="text"  name="username" required>
+        </div>
+
+            <div class="last">
+            <p>Last Name<sup>*</sup></p>
+            <input type="text"  name="username" required>
+            </div>
+        </div>
+
+
+        <div class="inp">
+        <p>Email<sup>*</sup></p>
+        <input type="text"  name="email" required>
+
+
+        <p>Subject</p>
+        <input type="text">
+
+
+        <p>Message</p>
+        <textarea id="msg"></textarea><br>
+        
+    <div id="send" onclick="myFunction()">
+           <button>SEND</button>
+           <p id="demo"></p>
+        </div>
+    </div>
+   </div>
+ </div>
+
+
+ <div class="hire">
+     <p><i class="fa fa-phone"></i> Phone : 123-456-7890</p>
+     <p><i class="fa fa-envelope"></i> Email : tasnimfatma97@gmail.com</p>
+     <p><i class="fa fa-home"></i> Location : Sundargarh - Odisha, India </p>
+     <a href="mailto: tasnimfatna97@gmail.com"><button>Hire Me</button></a>
+ </div>
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+	
+
+             
+
+
+ 
+
+<div class="icons">
+	<i class="fa fa-github" onclick="window.open('https://www.instagram.com/')"></i>
+	<i class="fa fa-youtube" onclick="window.open('https://www.instagram.com/')"></i>
+</div>
+
+</div>
+
+
+ 
+
+
+   <div class="footer">
+   	<p>&copy; Copyright All rights reserved, Made with love <i class="fa fa-heart-o"></i> by Tasnim Fatma</p>
+   </div>
+
+
+
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha256-JtQPj/3xub8oapVMaIijPNoM0DHoAtgh/gwFYuN5rik=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  <script>
+  	
+  	$('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+
+});
+
+
+  		$('.count').counterUp({
+  		delay:10,
+      time:1000
+
+  	})
+
+  </script>
+
+  <script>
+ 
+
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Thanks for Submitting!!";
+};
+
+
+function hideDiv(){
+    document.getElementById('demo').style.visibility = "hidden";
+}
+setTimeout("hideDiv()", 4000);
+
+ 
+    </script>
+
+<!-- ------------------script for bar-------------------->
+  <script>
+      
+
+      /* Credits: 
+ * https://www.developphp.com/video/JavaScript/Circular-Progress-Loader-Canvas-JavaScript-Programming-Tutorial
+ */
+
+// (function() {
+    
+//     var Progress = function( element ) {
+        
+//         this.context = element.getContext( "2d" );
+//         this.refElement = element.parentNode;
+//         this.loaded = 0;
+//         this.start = 4.72;
+//         this.width = this.context.canvas.width;
+//         this.height = this.context.canvas.height;
+//         this.total = parseInt( this.refElement.dataset.percent, 10 );
+//         this.timer = null;
+        
+//         this.diff = 0;
+        
+//         this.init();    
+//     };
+    
+//     Progress.prototype = {
+//         init: function() {
+//             var self = this;
+//             self.timer = setInterval(function() {
+//                 self.run(); 
+//             }, 25);
+//         },
+//         run: function() {
+//             var self = this;
+            
+//             self.diff = ( ( self.loaded / 100 ) * Math.PI * 2 * 10 ).toFixed( 2 );  
+//             self.context.clearRect( 0, 0, self.width, self.height );
+//             self.context.lineWidth = 5;
+//             self.context.fillStyle = "#fff";
+//             self.context.strokeStyle = "#fff";
+//             self.context.textAlign = "center";
+            
+//             self.context.fillText( self.loaded + "%", self.width * .5, self.height * .5 + 2, self.width );
+//             self.context.beginPath();
+//             self.context.arc( 35, 35, 30, self.start, self.diff / 10 + self.start, false );
+//             self.context.stroke();
+            
+//             if( self.loaded >= self.total ) {
+//                 clearInterval( self.timer );
+//             }
+            
+//             self.loaded++;
+//         }
+//     };
+    
+//     var CircularSkillBar = function( elements ) {
+//         this.bars = document.querySelectorAll( elements );
+//         if( this.bars.length > 0 ) {
+//             this.init();
+//         }   
+//     };
+    
+//     CircularSkillBar.prototype = {
+//         init: function() {
+//             this.tick = 25;
+//             this.progress();
+            
+//         },
+//         progress: function() {
+//             var self = this;
+//             var index = 0;
+//             var firstCanvas = self.bars[0].querySelector( "canvas" );
+//             var firstProg = new Progress( firstCanvas );
+            
+            
+            
+//             var timer = setInterval(function() {
+//                 index++;
+                    
+//                 var canvas = self.bars[index].querySelector( "canvas" );
+//                 var prog = new Progress( canvas );
+                
+//                 if( index == self.bars.length ) {
+//                         clearInterval( timer );
+//                 } 
+                
+//             }, self.tick * 100);
+                
+//         }
+//     };
+    
+//     document.addEventListener( "DOMContentLoaded", function() {
+//         var circularBars = new CircularSkillBar( "#bars .bar" );
+//     });
+    
+// })();
+  </script>
+
+
+</body>
+</html>
